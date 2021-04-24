@@ -2,6 +2,36 @@
 cd $(dirname ${(%):-%N})
 BASE=$(pwd)
 
+function usage()
+{
+    echo ""
+    echo "install.zsh"
+    echo "\t-h --help"
+    echo "\t--pass=$PASSWD"
+    echo ""
+}
+
+while [ "$1" != "" ]; do
+    PARAM=`echo $1 | awk -F= '{print $1}'`
+    VALUE=`echo $1 | awk -F= '{print $2}'`
+    case $PARAM in
+        -h | --help)
+            usage
+            exit
+            ;;
+        --pass)
+            PASSWD=$VALUE
+            ;;
+        *)
+            echo "ERROR: unknown parameter \"$PARAM\""
+            usage
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+
 # initialization for some alias and commands
 source ~/.zshrc
 
@@ -42,7 +72,7 @@ else
     echo " === the system is Linux, ${DISTRO} distro ===";
     if [ ${DISTRO} = 'Ubuntu' ]; then
         echo "running install script for ${DISTRO} ..."
-	./install_scripts/install_ubuntu
+	echo ${PASSWD} | sudo -S ./install_scripts/install_ubuntu
     elif [ ${DISTRO} = 'Arch Linux' ]; then
         echo "running install script for ${DISTRO} ..."
 	./install_scripts/install_arch

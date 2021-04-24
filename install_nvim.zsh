@@ -1,6 +1,4 @@
-cd $(dirname ${(%):-%N})
 BASE=$(pwd)
-
 
 export GIT_SSL_NO_VERIFY=true
 
@@ -10,8 +8,9 @@ curl --insecure -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vi
 
 # nvim
 mkdir -p ~/.config/nvim/autoload
-ln -sf $BASE/vimrc ~/.config/nvim/init.vim
+ln -sf ${BASE}/dotfiles/vimrc ~/.config/nvim/init.vim
 ln -sf ~/.vim/autoload/plug.vim ~/.config/nvim/autoload/
 
 # apply to nvim
 nvim +PlugInstall +qall
+

@@ -1,0 +1,23 @@
+#! /bin/zsh
+
+# check existence of any commands to be installed
+function is_existed() {
+if ! command -v $1 &> /dev/null
+then
+    echo "$1 could not be found";
+    return 1
+else
+    return 0
+fi
+}
+
+function check_if_line_exists()
+{
+    # grep wont care if one or both files dont exist.
+    grep -qsFx "$1" ${HOME}/.zshrc
+}
+
+function add_line_to_file()
+{
+    printf "%s\n" "$1" >> "$2"
+} 

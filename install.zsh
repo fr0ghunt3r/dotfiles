@@ -5,17 +5,8 @@ BASE=$(pwd)
 # initialization for some alias and commands
 source ~/.zshrc
 
-# check existence of any commands to be installed
-function is_existed() {
-if ! command -v $1 &> /dev/null
-then
-    echo "$1 could not be found";
-    return 1
-else
-    return 0
-fi
-}
-
+# load functions
+source functions
 
 # installation steps ; nvm 
 if is_existed nvm; then
@@ -57,3 +48,13 @@ else
 	./install_scripts/install_arch
     fi 
 fi
+
+# git user configuration
+git config --global user.email "antin.choi@gmail.com"
+git config --global user.name "fr0ghunt3r"
+git config --global user.signingKey 93BE6E938F5618CA
+git config --global commit.gpgsign true
+
+# for gpg tty configuration
+gpg_tty="export GPG_TTY=\$(tty)"
+check_if_line_exists ${gpg_tty} || add_line_to_file ${gpg_tty} "${HOME}/.zshrc"

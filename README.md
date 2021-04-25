@@ -23,5 +23,5 @@ pacman -S zsh
 ## Run installation script
 
 ```zsh
-./install.zsh --pass={ur_password} # password is need to give permission to install system packages
+./install.zsh --pass={ur_password} # password is needed to give permission to install system packages
 ```

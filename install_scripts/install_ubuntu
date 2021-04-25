@@ -2,4 +2,8 @@
 cd $(dirname ${(%):-%N})
 BASE=$(pwd)
 
+# development environment
 sudo apt-get install -y python2
+
+# neovim editor
+sudo apt-get install -y python3-neovim

@@ -1,2 +1,5 @@
 #! /bin/zsh
 echo "test arch" 
+
+
+sudo pacman -S python-pynvim

@@ -102,7 +102,6 @@ let g:closetag_filenames = '*.js'
 
 Plug 'honza/dockerfile.vim' " dockerfile 
 Plug 'chrisbra/unicode.vim', { 'for': 'journal' } " unicode utility
-Plug 'octol/vim-cpp-enhanced-highlight' " cpp highlight
 Plug 'mzlogin/vim-markdown-toc' " markdown 
 
 if v:version >= 800 && !s:windows
@@ -243,8 +242,9 @@ if has_key(g:plugs, 'coc.nvim')
 endif
 
 
+
 " ============================================================================
-" FZF {{{
+" FZF 
 " ============================================================================
 
 let $FZF_DEFAULT_OPTS .= ' --inline-info'

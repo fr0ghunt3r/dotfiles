@@ -4,19 +4,10 @@ echo "running install_macos"
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Updating homebrew"
-brew install --cask xquartz iterm2 keepingyouawake spectacle \
-	mat visualvm google-backup-and-sync rstudio r mactex osxfuse \
-	karabiner-elements maccy adoptopenjdk8
 
 brew install \
 	fd ag ripgrep ant cmake cmus coreutils cscope exiftool doxygen liboauth \
-	fish git graphviz imagemagick leiningen sbt gnupg \
-	ranger tree vim wget zsh nvim ruby python go highlight bat \
-	reattach-to-user-namespace pinentry-mac bash-completion tmux gnuplot w3m yarn \
-	translate-shell
+	git graphviz imagemagick leiningen gnupg \
+	ranger tree vim wget zsh nvim python highlight bat \
+	reattach-to-user-namespace pinentry-mac bash-completion tmux gnuplot w3m yarn
 
-brew tap universal-ctags/universal-ctags
-brew install --HEAD universal-ctags
-
-gem install gem-ctags
-gem ctags

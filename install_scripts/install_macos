@@ -1,6 +1,7 @@
 #! /bin/zsh
 echo "running install_macos" 
 echo "eval \$(/opt/homebrew/bin/brew shellenv)" > ${HOME}/.zprofile
+source ${HOME}/.zprofile
 
 [ -z "$(which brew)" ] &&
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

@@ -6,11 +6,11 @@ let maplocalleader = ' '
 
 silent! if plug#begin('~/.vim/plugged')
 
-if s:darwin
-	let g:plug_url_format = 'git@github.com:%s.git'
-else
-	let $GIT_SSL_NO_VERIFY = 'true'
-endif
+"if s:darwin
+"	let g:plug_url_format = 'git@github.com:%s.git'
+"else
+"	let $GIT_SSL_NO_VERIFY = 'true'
+"endif
 
 " Plugins from junegunn
 Plug 'junegunn/fzf', { 'do': './install --all' }
@@ -197,7 +197,6 @@ nnoremap <C-]> g<C-]>
 nnoremap g[ :pop<cr>
 
 inoremap jk <esc>
-xnoremap jk <Esc>
 cnoremap jk <C-c>
 
 

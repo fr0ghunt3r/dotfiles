@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/choi/.oh-my-zsh"
+export ZSH="/Users/temp/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -128,3 +128,5 @@ export NVM_DIR="${HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 export GPG_TTY=$(tty)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -31,6 +31,12 @@ while [ "$1" != "" ]; do
     shift
 done
 
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# copying modified zsh setting into home directory
+sed '1,/export ZSH/{/export ZSH/d;}' ${BASE}/dotfiles/zshrc | sed '/installation/a \
+export ZSH='"${HOME}"'/.oh-my-zsh ' > ${HOME}/.zshrc
 
 # initialization for some alias and commands
 source ~/.zshrc

@@ -25,3 +25,9 @@ pacman -S zsh
 ```zsh
 ./install.zsh --pass={ur_password} # password is needed to give permission to install system packages
 ```
+
+## If oh-my-zsh theme is not working on Arch Linux,
+run below command
+```zsh
+yay -Rncs grml-zsh-config
+```
